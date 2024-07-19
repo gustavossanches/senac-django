@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container_mostrar_contatos">
+    <h1>Usuários cadastrados</h1>
+
+    {% if sql %}
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th colspan="2">Opções</th>
+        </tr>
+        {% for usuario in sql %}
+        <tr>
+            <td>{{usuario[1]}}</td>
+            <td>{{usuario[3]}}</td>
+            <td class="btn-editar"><a href="/atualizar_usuario/{{usuario[0]}}">EDITAR</a></td>
+            <td class="btn-excluir"><a href="/excluir_usuario/{{usuario[0]}}">EXCLUIR</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h3 class="tabela_meus_contatos">Nenhum usuário cadastrado no momento!</h3>
+    {% endif %}
+</div>
+{% endblock %}

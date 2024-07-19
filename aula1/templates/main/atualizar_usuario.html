@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h1>Atualizar usuario</h1>
+<div class="box-forms">
+    <form method="POST" action="/atualizar_usuario/{{id}}">
+        <div class="inputs">
+            {{ form.csrf_token() }}
+            <label for="nome">Novo nome</label>
+            {{form.nome}}
+
+            <label for="email">Novo e-mail</label>
+            {{form.email}}
+
+            <label for="senha">Nova senha</label>
+            {{form.senha}}
+        </div>
+
+        <button class="btn_atualizar" type="submit">Atualizar</button>
+        <!-- AJUSTAR AQUI -->
+    </form>
+</div>
+{% endblock %}

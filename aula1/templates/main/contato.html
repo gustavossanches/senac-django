@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <main>
+        <div class="contatos">
+            <h2>Entre em contato aqui</h2>
+            <div class="container_contato">
+                <form class="form" action="processa_contatos" method="POST">
+                    {{ form.csrf_token() }}
+                    <div class="inputs-contato">
+                        <label for="nome">Nome</label>
+                        {{form.nome}}
+                        <label for="email">E-mail</label>
+                        {{form.email}}
+                        <label for="mensagem">Mensagem</label>
+                        {{form.mensagem}}
+                    </div>
+                    <button class="voltar_login" type="submit">Enviar</button>
+                </form>
+                <a href="/"><button class="voltar_login2" >Voltar para login</button></a>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

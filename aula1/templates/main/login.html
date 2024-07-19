@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+    <main>
+        <div class="container-login">
+            <h2>Login</h2>
+            <div class="box-forms">
+                <form method="POST" action="valida_login">
+                    <div class="inputs">
+                        {% csrf_token %}
+                        <label for="usuario">E-mail</label>
+                        {{form.email}}
+
+                        <label for="senha">Senha</label>
+                        {{form.senha}}
+                    </div>
+                    <button class="btn_login" type="submit">Entrar</button>
+                </form>
+                <!-- <a href="/cadastro"><button class="btn_cadastro">Cadastrar</button></a>
+                <a href="/contatos"><button class="btn_contatos">Entrar em contato</button></a> -->
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container_mostrar_contatos">
+    <h1>Meus contatos</h1>
+
+    {% if sql %}
+    <h3 class="situacao_contatos">Contatos pendentes</h3>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Mensagem</th>
+            <th>Situação</th>
+            <th>Ação TESTE</th>
+        </tr>
+        {% for contato in sql %}
+        <tr>
+            <td>{{contato[1]}}</td>
+            <td>{{contato[2]}}</td>
+            <td>{{contato[3]}}</td>
+            <td>{{contato[4]}}</td>
+            <td class="btn-enviar"><a href="/finalizar/{{contato[0]}}">Finalizar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h3 class="tabela_meus_contatos">Sem pendências</h3>
+    {% endif %}
+
+    {% if sql2 %}
+    <h3 class="situacao_contatos">Contatos finalizados</h3>
+
+    <div class="container-relatorios">
+    </div>
+    <table>
+        <tr>
+            <th colspan="2">
+                <a class="btn-relatorios pdf" href="/relatorio_pdf">Relatório PDF</a>
+            </th>
+            <th colspan="2">
+               <a class="btn-relatorios excel" href="/relatorio_excel">Relatório Excel</a>
+            </th>
+        </tr>
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Mensagem</th>
+            <th>Situação</th>
+        </tr>
+        {% for contato in sql2 %}
+        <tr>
+            <td>{{contato[1]}}</td>
+            <td>{{contato[2]}}</td>
+            <td>{{contato[3]}}</td>
+            <td>{{contato[4]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h3 class="tabela_meus_contatos">Sem Entregas</h3>
+    {% endif %}
+
+</div>
+{% endblock %}
