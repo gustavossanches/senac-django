@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'main/index.html' %}
 
 {% block content %}
 <div class="container_mostrar_contatos">
@@ -13,16 +13,14 @@
             <th>Ação</th>
         </tr>
         {% for contato in sql %}
-        {% if contato.situacao != 'Em atendimento' %}
         <tr>
-            <td>{{contato[1]}}</td>
-            <td>{{contato[2]}}</td>
-            <td>{{contato[3]}}</td>
-            <td>{{contato[4]}}</td>
+            <td>{{contato.1}}</td>
+            <td>{{contato.2}}</td>
+            <td>{{contato.3}}</td>
+            <td>teste</td>
             <!-- passa o id para a url e usando ele em atribuir() -->
-            <td class="btn-editar"><a href="/atribuir/{{contato[0]}}">Atribuir</a></td>
+            <td class="btn-editar"><a href="/atribuir/{{contato.0}}">Atribuir</a></td>
         </tr>
-        {% endif %}
         {% endfor %}
         <!-- <tr>
             <td colspan="5">Sem dados no momento</td>
