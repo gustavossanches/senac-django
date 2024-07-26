@@ -1,0 +1,29 @@
+{% extends 'main/index.html' %}
+
+{% block content %}
+<h1>Criar chamado</h1>
+<div class="box-forms">
+    <form class="form" action="processa_criar_chamados" method="POST">
+        <div class="inputs">
+            {% csrf_token %}
+            <div class="inputs-contato">
+                <label for="nome">Nome</label>
+                <input name="nome" type="text">
+
+                <label for="email">E-mail</label>
+                <input name="email" type="text">
+
+                <label for="tipo_servico">Tipo de Serviço</label>
+                <input name="tipo_servico" type="text">
+
+                <label for="descricao">Descrição</label>
+                <input name="descricao" type="text">
+
+            </div>
+        </div>
+
+        <button class="btn_atualizar" type="submit">Criar</button>
+        <!-- AJUSTAR AQUI -->
+    </form>
+</div>
+{% endblock %}

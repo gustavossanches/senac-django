@@ -39,22 +39,23 @@ def conectar_banco():
 
         cursor = connector.cursor()
         cursor.execute(
-            "CREATE TABLE contatos (id_contato INT AUTO_INCREMENT PRIMARY KEY, nome VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, mensagem TEXT NOT NULL,situacao varchar (50) NOT NULL);"
+            "CREATE TABLE chamados (id INT AUTO_INCREMENT PRIMARY KEY, nome VARCHAR(255), email VARCHAR(255) NOT NULL, tipo_servico VARCHAR(255) NOT NULL, descricao TEXT NOT NULL, situacao varchar (50) NOT NULL);"
         )
 
         cursor.execute(
-            "CREATE TABLE usuarios (id INT AUTO_INCREMENT PRIMARY KEY, nome VARCHAR(255), email VARCHAR(255), senha VARCHAR(255));"
+            "CREATE TABLE usuarios (id INT AUTO_INCREMENT PRIMARY KEY, nome VARCHAR(255), email VARCHAR(255), senha VARCHAR(255), tipo VARCHAR(255));"
         )
 
         cursor.execute(
-            "CREATE TABLE usuario_contato (usuario_id INT NOT NULL, contato_id INT NOT NULL, situacao VARCHAR(255) NOT NULL, PRIMARY KEY (usuario_id, contato_id), FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE, FOREIGN KEY (contato_id) REFERENCES contatos(id_contato) ON DELETE CASCADE);"
+            "CREATE TABLE usuario_chamado (usuario_id INT NOT NULL, chamado_id INT NOT NULL, situacao VARCHAR(255) NOT NULL, PRIMARY KEY (usuario_id, chamado_id), FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE, FOREIGN KEY (chamado_id) REFERENCES chamados(id) ON DELETE CASCADE);"
         )
         connector.commit()
         nome = "admin"
         email = "admin@admin.com"
         senha = "123"
-        sql = "INSERT INTO usuarios (nome, email, senha) VALUES (%s, %s, %s)"
-        valores = (nome, email, senha)
+        tipo = "adm"
+        sql = "INSERT INTO usuarios (nome, email, senha, tipo) VALUES (%s, %s, %s, %s)"
+        valores = (nome, email, senha, tipo)
         cursor.execute(sql, valores)
         connector.commit()
 

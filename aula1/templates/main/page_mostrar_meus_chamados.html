@@ -1,0 +1,33 @@
+{% extends 'main/index.html' %}
+
+{% block content %}
+<div class="container_mostrar_contatos">
+    <h1>Meus chamados</h1>
+
+    {% if sql %}
+    <h3 class="situacao_contatos">Chamados pendentes</h3>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Tipo de serviço</th>
+            <th>Descrição</th>
+            <th>Situação</th>
+            <th>Ação TESTE</th>
+        </tr>
+        {% for chamado in sql %}
+        <tr>
+            <td>{{chamado.1}}</td>
+            <td>{{chamado.2}}</td>
+            <td>{{chamado.3}}</td>
+            <td>{{chamado.4}}</td>
+            <td>{{chamado.5}}</td>
+            <td class="btn-enviar"><a href="/finalizar_chamado/{{chamado.0}}">Finalizar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h3 class="tabela_meus_contatos">Sem pendências</h3>
+    {% endif %}
+</div>
+{% endblock %}

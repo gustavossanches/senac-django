@@ -39,10 +39,13 @@
     <header>
         <nav>
             <div class="opc_header">
-                <a href="/home">Início</a>
-                <a href="/mostrar_meus_contatos">Mostrar meus contatos</a>
-                <a href="{% url 'mostrar_contatos' %}">Mostrar contatos</a>
-                <a href="/mostrar_usuarios">Mostrar usuários</a>
+                
+                <a href="{% url 'page_home' %}">Início</a>
+                <a href="{% url 'page_mostrar_meus_chamados' %}">Meus chamados pendentes</a>
+                <a href="{% url 'page_mostrar_chamados' %}">Chamados em aberto</a>
+                <a href="{% url 'page_mostrar_usuarios' %}">Usuários cadastrados</a>
+                <a href="{% url 'page_criar_chamado' %}">Abrir chamado</a>
+                <a href="{% url 'page_cadastro' %}">Cadastrar usuário</a>
                 <a class="sair" href="/">Sair</a>
 
                 <!-- <a href="/sobre">Sobre</a> -->

@@ -95,7 +95,8 @@ header a {
 
 nav {
     width: 100%;
-    background: rgb(66 90 121);
+        background: rgb(89, 169, 117);
+
     display: flex;
     justify-content: center;
 }
@@ -114,7 +115,8 @@ nav {
 
 .opc_header a {
     transition: 0.3s;
-    background: rgb(66 90 121);
+        background: rgb(89, 169, 117);
+
     padding: 1rem;
 }
 

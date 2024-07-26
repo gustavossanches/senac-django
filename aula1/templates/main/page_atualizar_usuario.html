@@ -1,19 +1,19 @@
-{% extends 'index.html' %}
+{% extends 'main/index.html' %}
 
 {% block content %}
 <h1>Atualizar usuario</h1>
 <div class="box-forms">
-    <form method="POST" action="/atualizar_usuario/{{id}}">
+    <form method="POST" action="/processa_atualizar_usuario/{{id}}">
         <div class="inputs">
-            {{ form.csrf_token() }}
-            <label for="nome">Novo nome</label>
-            {{form.nome}}
-
+            {% csrf_token %}
             <label for="email">Novo e-mail</label>
-            {{form.email}}
+            <input name="email" type="email">
+
+            <label for="nome">Novo nome</label>
+            <input name="nome" type="text">
 
             <label for="senha">Nova senha</label>
-            {{form.senha}}
+            <input name="senha" type="password">
         </div>
 
         <button class="btn_atualizar" type="submit">Atualizar</button>

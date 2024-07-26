@@ -8,7 +8,8 @@
         <tr>
             <th>Nome</th>
             <th>E-mail</th>
-            <th>Mensagem</th>
+            <th>Tipo de serviço</th>
+            <th>Descricão</th>
             <th>Situação</th>
             <th>Ação</th>
         </tr>
@@ -17,14 +18,12 @@
             <td>{{contato.1}}</td>
             <td>{{contato.2}}</td>
             <td>{{contato.3}}</td>
-            <td>teste</td>
-            <!-- passa o id para a url e usando ele em atribuir() -->
-            <td class="btn-editar"><a href="/atribuir/{{contato.0}}">Atribuir</a></td>
+            <td>{{contato.4}}</td>
+            <td>{{contato.5}}</td>
+            <!-- passa o id do usuario logado para a url e usando ele em atribuir() -->
+            <td class="btn-editar"><a href="/atribui_atendimento/{{contato.0}}">Atribuir</a></td>
         </tr>
         {% endfor %}
-        <!-- <tr>
-            <td colspan="5">Sem dados no momento</td>
-        </tr> -->
     </table>
     {% else %}
     <h3 class="tabela_meus_contatos">Nenhum contato no momento!</h3>

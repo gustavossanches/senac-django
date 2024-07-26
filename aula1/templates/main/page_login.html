@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 
 </head>
+
 <body>
     <main>
         <div class="container-login">
@@ -27,6 +28,8 @@
                 </form>
                 <!-- <a href="/cadastro"><button class="btn_cadastro">Cadastrar</button></a>
                 <a href="/contatos"><button class="btn_contatos">Entrar em contato</button></a> -->
+                <p>Caso não tenha login, entre em contato por e-mail com algum administrador da lista <strong><a href="{% url 'lista_admin' %}">CLICANDO AQUI!</a></strong>
+                </p>
             </div>
         </div>
     </main>
