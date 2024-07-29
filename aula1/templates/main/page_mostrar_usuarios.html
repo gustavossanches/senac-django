@@ -1,7 +1,7 @@
 {% extends 'main/index.html' %}
 
 {% block content %}
-<div class="container_mostrar_contatos">
+<div class="lista_chamados">
     <h1>Usuários cadastrados</h1>
 
     {% if sql %}
@@ -24,13 +24,13 @@
             <td>Administrador</td>
 
             {% endif %}
-            <td class="btn-editar"><a href="/page_atualizar_usuario/{{usuario.0}}">EDITAR</a></td>
-            <td class="btn-excluir"><a href="/excluir_usuario/{{usuario.0}}">EXCLUIR</a></td>
+            <td><button class="btn-editar"><a href="/page_atualizar_usuario/{{usuario.0}}">Editar</a></button></td>
+            <td><button class="btn-excluir"><a href="/excluir_usuario/{{usuario.0}}">Excluir</a></button></td>
         </tr>
         {% endfor %}
     </table>
     {% else %}
-    <h3 class="tabela_meus_contatos">Nenhum usuário cadastrado no momento!</h3>
+    <h3 class="box_mensagem">Nenhum usuário cadastrado no momento!</h3>
     {% endif %}
 </div>
 {% endblock %}

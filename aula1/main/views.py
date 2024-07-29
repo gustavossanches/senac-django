@@ -154,13 +154,12 @@ def page_home(request):
         '''
         cursor.execute(sql, (usuario_id, ))
         sql = cursor.fetchall()
-       
+
         sql2 = '''
-            SELECT * FROM chamados as ct
-            INNER JOIN usuario_chamado as uc
-            WHERE uc.situacao = 'Finalizado';
+            SELECT * FROM chamados
+            WHERE situacao = 'Finalizado';
         '''
-        cursor.execute(sql, (usuario_id, ))
+        cursor.execute(sql2)
         sql2 = cursor.fetchall()
         print(f'2 -> {sql2}')
             

@@ -1,8 +1,8 @@
 {% extends 'main/index.html' %}
 
 {% block content %}
-<div class="container_mostrar_contatos">
-    <h1>Retorno de usuários</h1>
+<div class="lista_chamados">
+    <h1>Painel de chamados</h1>
     {% if sql %}
     <table>
         <tr>
@@ -26,7 +26,7 @@
         {% endfor %}
     </table>
     {% else %}
-    <h3 class="tabela_meus_contatos">Nenhum contato no momento!</h3>
+    <h3 class="box_mensagem">Nenhum chamado aberto no momento!</h3>
     {% endif %}
 </div>
 {% endblock %}

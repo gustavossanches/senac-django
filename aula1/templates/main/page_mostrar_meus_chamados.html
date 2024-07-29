@@ -1,11 +1,11 @@
 {% extends 'main/index.html' %}
 
 {% block content %}
-<div class="container_mostrar_contatos">
+<div class="lista_chamados">
     <h1>Meus chamados</h1>
 
     {% if sql %}
-    <h3 class="situacao_contatos">Chamados pendentes</h3>
+    <h3 class="situacao_contatos">Chamados em aberto</h3>
     <table>
         <tr>
             <th>Nome</th>
@@ -13,7 +13,7 @@
             <th>Tipo de serviço</th>
             <th>Descrição</th>
             <th>Situação</th>
-            <th>Ação TESTE</th>
+            <th>Ação</th>
         </tr>
         {% for chamado in sql %}
         <tr>
@@ -27,7 +27,7 @@
         {% endfor %}
     </table>
     {% else %}
-    <h3 class="tabela_meus_contatos">Sem pendências</h3>
+    <h3 class="box_mensagem">Nenhum chamado aberto</h3>
     {% endif %}
 </div>
 {% endblock %}

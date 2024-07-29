@@ -2,15 +2,15 @@ h1 {
     font-family: "Merriweather", serif;
 }
 
-h2{
-    color: red;
-
-}
 
 * {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a{
+    color: black;
 }
 
 
@@ -95,8 +95,7 @@ header a {
 
 nav {
     width: 100%;
-        background: rgb(89, 169, 117);
-
+    background-color: rgba(86, 138, 105, 0.61);
     display: flex;
     justify-content: center;
 }
@@ -106,17 +105,16 @@ nav {
 }
 
 .opc_header a:hover {
-    background: rgb(96, 116, 142);
+    background: rgba(57, 85, 67, 0.61);
     transition: 0.3s;
     cursor: pointer;
     color: white;
+    border-bottom: 4px solid white;
 
 }
 
 .opc_header a {
     transition: 0.3s;
-        background: rgb(89, 169, 117);
-
     padding: 1rem;
 }
 
@@ -124,7 +122,7 @@ nav {
     height: 100%;
 }
 
-/* contato */
+/* chamado */
 
 .container_contato {
     display: flex;
@@ -163,13 +161,21 @@ nav {
 
 .voltar_login, .voltar_login2 {
     padding: 0.4rem 1.2rem;
-    margin: 0.5rem;
+    /* margin: 0.5rem; */
     border-radius: 5px;
     border: 1px solid black;
+ 
 }
 
-.inputs-contato input {
-    margin-bottom: 1rem;
+.inputs input {
+    margin-bottom: 0.5rem;
+}
+
+.inputs{
+    display: flex;
+    justify-content: center;
+    align-items: stretch!important;
+
 }
 
 
@@ -257,7 +263,7 @@ nav {
     text-align: center;
 }
 
-.btn_cadastro{
+.btn_cadastro {
     /* cadastrar */
     background-color: #c8c800;
     width: 100%;
@@ -290,13 +296,14 @@ nav {
     font-style: italic;
 }
 
-/* meus contatos */
+/* meus chjanmados */
 
-.tabela_meus_contatos {
+.box_mensagem {
     background-color: rgba(81, 81, 175, 0.346);
     margin: 5rem;
     padding: 1rem;
     border-radius: 5px;
+    box-shadow: 0px 0px 6px 0px #00000059;
 }
 
 .situacao_contatos {
@@ -306,16 +313,19 @@ nav {
 .btn_atualizar:hover {
     /* entrar */
     background-color: #004f00;
+    cursor: pointer;
+    color: white;
 }
 
 .btn_atualizar {
     /* entrar */
     background-color: #007100db;
+    font-weight: bold;
     width: 100%;
     padding: 0.5rem;
 }
 
-/* MOSTRAR CONTATOS */
+/* mostrar os chamados */
 .btn-enviar:hover {
     background-color: #004f00;
 }
@@ -334,7 +344,7 @@ nav {
 }
 
 
-.container_mostrar_contatos {
+.lista_chamados {
     margin: 1rem;
     padding: 1rem;
     display: flex;
@@ -344,27 +354,27 @@ nav {
 
 }
 
-.container_mostrar_contatos tr:hover {
+.lista_chamados tr:hover {
     filter: drop-shadow(rgba(50, 42, 42, 0.463) 0.2rem 0.2rem 0.1rem);
 
 }
 
-.container_mostrar_contatos tr:nth-child(even) {
+.lista_chamados tr:nth-child(even) {
     background-color: lightgray;
 }
 
-.container_mostrar_contatos tr:nth-child(odd) {
+.lista_chamados tr:nth-child(odd) {
     background-color: rgb(190, 190, 190);
 
 }
 
-.container_mostrar_contatos table {
+.lista_chamados table, .lista_admin {
     border: 1px solid black;
     padding: 0.5rem;
     border-collapse: collapse;
 }
 
-.container_mostrar_contatos th {
+.lista_chamados th, .lista_admin th {
     background-color: gray;
     border: 1px solid black;
     padding: 0.3rem 0.5rem;
@@ -372,7 +382,7 @@ nav {
 }
 
 
-.container_mostrar_contatos td {
+.lista_chamados td, .lista_admin td {
     border: 1px solid black;
     padding: 0.3rem 0.5rem;
     font-size: 1.2em;
@@ -384,21 +394,22 @@ nav {
 
 .btn-excluir {
     background-color: red;
+    padding: 0.1rem;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+.btn-editar {
+    border: 1px solid black;
+    padding: 0.1rem 0.3rem;
+    background-color: #c8c800;
+    font-weight: bold;
 }
 
 .btn-editar:hover {
     background-color: #696900;
-    color: white;
 }
 
-.btn-editar a, .btn-excluir a {
-    color: white;
-    color: black;
-}
-
-.btn-editar {
-    background-color: #c8c800;
-}
 
 .btn-relatorios {
     color: black;

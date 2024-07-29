@@ -3,48 +3,70 @@
 {% block content %}
 {% load static %}
 <h1>Seja bem vindo, {{usuario_logado.1}}!</h1>
-<h2>E-mail cadastrado: {{ usuario_logado.2 }}</h2>
-<h2>Cargo atual:
-    {% if usuario_logado.4 == 'job' %}
-    Usuário comum
-    {% elif usuario_logado.4 == 'tec' %}
-    Técnico
-    {% else %}
-    Administrador
-</h2>
-{% endif %}
-{% if usuario_logado.4 != 'job' %}
-{% if sql %}
-<h3 class="situacao_contatos">Aqui estão os chamados que você finalizou:</h3>
-<div class="container_mostrar_contatos">
-    <table>
-        <tr>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Tipo de serviço</th>
-            <th>Descrição</th>
-            <th>Situação</th>
-        </tr>
-        {% for chamado in sql %}
-        <tr>
-            <td>{{chamado.1}}</td>
-            <td>{{chamado.2}}</td>
-            <td>{{chamado.3}}</td>
-            <td>{{chamado.4}}</td>
-            <td>{{chamado.5}}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    {% else %}
-    <h3 class="tabela_meus_contatos">Sem Entregas</h3>
+<div>
+    <p>E-mail cadastrado: {{ usuario_logado.2 }}</p>
+    <p>Cargo atual:
+        {% if usuario_logado.4 == 'job' %}
+        Usuário comum
+        {% elif usuario_logado.4 == 'tec' %}
+        Técnico
+        {% else %}
+        Administrador
+    </p>
 </div>
-{% endif %}
-{% else %}
-{% if sql2 %}
-{{sql2}}
-{% endif %}
-{{sql2}}
-<p>teste caso seja usuario comum logado</p>
-{% endif %}
 
-{% endblock %}
+    {% endif %}
+    {% if usuario_logado.4 != 'job' %}
+
+    {% if sql %}
+    <h3 class="situacao_contatos">Aqui estão os chamados que você finalizou:</h3>
+    <div class="lista_chamados">
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Tipo de serviço</th>
+                <th>Descrição</th>
+                <th>Situação</th>
+            </tr>
+            {% for chamado in sql %}
+            <tr>
+                <td>{{chamado.1}}</td>
+                <td>{{chamado.2}}</td>
+                <td>{{chamado.3}}</td>
+                <td>{{chamado.4}}</td>
+                <td>{{chamado.5}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <h3 class="box_mensagem">Sem Entregas</h3>
+    </div>
+    {% endif %}
+
+    {% else %}
+    {% if sql2 %}
+    <div class="lista_chamados">
+        <h3>Chamados finalizados</h3>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Tipo de serviço</th>
+                <th>Situação</th>
+            </tr>
+            {% for dado in sql2 %}
+            <tr>
+                <td>{{dado.1}}</td>
+                <td>{{dado.2}}</td>
+                <td>{{dado.3}}</td>
+                <td>{{dado.5}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    {% endif %}
+    {% endif %}
+
+    {% endblock %}
