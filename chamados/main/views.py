@@ -1,43 +1,9 @@
 from django.shortcuts import render, redirect
-from .forms import ContatoForm, UsuarioForm
+from .forms import UsuarioForm
 from .conectar import conectar_banco
-from .forms import ContatoForm
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login,logout  # Use Django authentication
 from django.contrib.auth.models import User
-#from django.contrib.auth.decorators import login_required  # For 'login_required' decorator
-from django.views.decorators.csrf import csrf_protect  # Adicione esta linha
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
-from django.http import HttpResponseBadRequest
-from django.db import transaction  # Para transações atômicas
-from django.http import HttpResponse, JsonResponse
-from django.contrib import messages
-
-
-'''
-controles de rotas impedindo entrar em certas abas do navabar dependendo do tipo do usuario
-#CONTROLE DAS ROTAS
-# if request.session.get('tipo') != 'tec':
-#   return redirect('/')
-# else:
-
-#page mostrar contatos -> email mostrando senha
-
-##estilizar
-
-##documentação 
-
-asgiref==3.8.1
-Django==5.0.7
-mysql-connector==2.2.9
-mysqlclient==2.2.4
-sqlparse==0.5.1
-tzdata==2024.1
-
-'''
-
 
 def page_login(request):
     request.session['id'] = ''

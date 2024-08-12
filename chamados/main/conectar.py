@@ -2,9 +2,7 @@ import mysql.connector
 
 
 def conectar_banco():
-    print('AQUI 1 ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
     connector = mysql.connector.connect(host="127.0.0.1", user="root", password="")
-    print('AQUI 2 ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
 
     # Executar a instrução SQL para verificar se o banco de dados existe
     cursor = connector.cursor()

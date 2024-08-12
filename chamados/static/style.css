@@ -144,6 +144,7 @@ nav {
 .voltar_login {
     background-color: #007100db;
     width: 100%;
+    font-weight: bold;
 }
 
 .voltar_login2:hover {
@@ -388,8 +389,9 @@ nav {
     font-size: 1.2em;
 }
 
-.btn-excluir:hover {
+.btn-excluir:hover, .btn-excluir:hover a {
     background-color: rgb(147, 1, 1);
+    color: white;
 }
 
 .btn-excluir {
@@ -406,9 +408,11 @@ nav {
     font-weight: bold;
 }
 
-.btn-editar:hover {
+.btn-editar:hover, .btn-editar:hover a {
     background-color: #696900;
+    color: white;
 }
+
 
 
 .btn-relatorios {
